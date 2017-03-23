@@ -1,4 +1,4 @@
-class MyClass:
+class MyClass(object):
     def __init__(self, msg):
         self.msg = msg
 
@@ -12,7 +12,7 @@ ob1.say_stuff()
 
 
 # "self" really isn't that special
-class MyClass:
+class MyClass(object):
     def __init__(her, msg):
         her.msg = msg
 
@@ -30,12 +30,12 @@ say_stuff(ob1)
 
 
 # Place the instance and method in separate classes.
-class MyClass:
+class MyClass(object):
     def say_stuff(self):
         print("Say stuff message is: {}\n\n".format(self.msg))
 
 
-class OtherClass:
+class OtherClass(object):
     def __init__(self, msg):
         self.msg = msg
 
@@ -45,7 +45,7 @@ MyClass.say_stuff(other_ob)
 
 
 # Working without an init with attribute setting instead of another class.
-class MyClass:
+class MyClass(object):
     def say_stuff(self):
         print("Say stuff message is: {}\n\n".format(self.msg))
 
@@ -55,7 +55,7 @@ ob.say_stuff()
 
 
 # Patching both the class and it's instance.
-class MyClass():
+class MyClass(object):
     pass
 
 ob = MyClass()
@@ -68,7 +68,7 @@ setattr(ob, "msg", "here is another patched in message to go with the patched in
 ob.say_stuff()
 
 #Do the same kind of patch job but with direct dictionary access instead. (to the instance)
-class MyClass():
+class MyClass(object):
     pass
 
 ob = MyClass()
@@ -86,7 +86,7 @@ ob.say_stuff()
 
 
 # Let's now take a method and replace it with a new one.
-class MyClass:
+class MyClass(object):
     def __init__(self, msg):
         self.msg = msg
 
@@ -102,7 +102,7 @@ ob = MyClass("This is my message here")
 ob.say_stuff()
 
 # Let's outright ignore a class method and make up our own.
-class MyClass:
+class MyClass(object):
     def __init__(self, msg):
         self.msg = msg
 
